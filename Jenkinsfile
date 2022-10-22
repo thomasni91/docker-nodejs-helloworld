@@ -10,10 +10,10 @@ pipeline {
         // APP_PORT = credentials('APP_PORT')
         // APP_NAME = credentials('APP_NAME')
         // API_PREFIX = credentials('API_PREFIX')
-        MONGO_USERNAME = credentials('MONGO_USERNAME')
-        MONGO_PASSWORD = credentials('MONGO_PASSWORD')
-        MONGO_DATABASE = credentials('MONGO_DATABASE')
-        MONGO_HOST = credentials('MONGO_HOST')
+        // MONGO_USERNAME = credentials('MONGO_USERNAME')
+        // MONGO_PASSWORD = credentials('MONGO_PASSWORD')
+        // MONGO_DATABASE = credentials('MONGO_DATABASE')
+        PORT = credentials('PORT')
     }
 
     stages {
