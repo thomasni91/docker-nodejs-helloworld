@@ -5,6 +5,7 @@
   "description": "Node.js Hello World app on Debian using docker",
   "author": "Tomas Barton <tomas.barton@fit.cvut.cz>",
   "dependencies": {
+    "dotenv": "^16.0.3",
     "express": "4.16.1"
   },
   "scripts": {

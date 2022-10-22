@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 var express = require('express');
 
 // Constants
@@ -7,7 +9,7 @@ var PORT = process.env.PORT || DEFAULT_PORT;
 // App
 var app = express();
 app.get('/', function (req, res) {
-  res.send('Hello World\n');
+  res.send(PORT);
 });
 
 app.listen(PORT)
