@@ -1,17 +1,16 @@
-FROM debian:stretch
-ARG DEBIAN_FRONTEND=noninteractive
+FROM node:16.16.0
 
-RUN apt-get update && apt-get install --no-install-recommends -y curl dirmngr gnupg apt-transport-https ca-certificates
-RUN curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -\
- && echo 'deb https://deb.nodesource.com/node_8.x stretch main' > /etc/apt/sources.list.d/nodesource.list\
- && apt-get update\
- && apt-get install -y nodejs && apt-get clean && rm -rf /var/lib/apt/lists/*
+ARG PORT
 
-# App
-ADD . /web
-WORKDIR /web
-# Install app dependencies
-RUN npm install
+ENV PORT = $PORT
 
-EXPOSE  8080
-ENTRYPOINT ["nodejs", "./index.js"]
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+COPY package.json .
+COPY yarn.lock .
+RUN yarn install
+
+COPY . .
+RUN yarn build
+EXPOSE 3001
+CMD [ "yarn", "start" ]
