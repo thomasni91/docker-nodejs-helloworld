@@ -2,7 +2,7 @@ FROM node:16.16.0
 
 # ARG PORT
 
-ENV PORT = $PORT
+# ENV PORT = $PORT
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
