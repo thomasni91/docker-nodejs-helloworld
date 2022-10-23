@@ -66,7 +66,7 @@ pipeline {
                     // sh 'docker build -t test --build-arg NODE_ENV=${NODE_ENV} --build-arg APP_PORT=${APP_PORT} --build-arg APP_NAME=${APP_NAME} --build-arg API_PREFIX=${API_PREFIX} --build-arg MONGO_USERNAME=${MONGO_USERNAME} --build-arg MONGO_PASSWORD=${MONGO_PASSWORD} --build-arg MONGO_DATABASE=${MONGO_DATABASE} --build-arg MONGO_HOST=${MONGO_HOST} .'
                     // sh 'docker build -t test --build-arg PORT=${PORT} .'
                     // sh 'docker build -t test --build-arg PORT=3001 .'
-                    sh 'docker build -t public.ecr.aws/u6c9w9i8/test:latest .'
+                    sh 'docker build -t test .'
 
 
 
